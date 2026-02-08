@@ -1,41 +1,41 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ResumeMatch-AI</title>
-  </head>
-  <body>
-    <h2>ResumeMatch-AI</h2>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ResumeMatch<span>.AI</span></h1>
+            <p>Optimize your application with AI-powered skill gap analysis.</p>
+        </header>
 
-    <div>
-      <label>Resume Text</label><br />
-      <textarea
-        id="resume"
-        rows="8"
-        cols="80"
-        placeholder="Paste resume text here..."
-      ></textarea>
+        <main class="card">
+            <div class="input-group">
+                <label for="resume">Resume Text</label>
+                <textarea id="resume" placeholder="Paste the full text of the resume here..."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="job">Job Description</label>
+                <textarea id="job" placeholder="Paste the job requirements here..."></textarea>
+            </div>
+
+            <button id="analyze-btn" onclick="analyze()">
+                <span id="btn-text">Analyze Match</span>
+                <div id="loader" class="hidden"></div>
+            </button>
+        </main>
+
+        <section id="result-container" class="hidden">
+            <h3>Analysis Report</h3>
+            <div id="result" class="result-box"></div>
+        </section>
     </div>
-
-    <br />
-
-    <div>
-      <label>Job Description</label><br />
-      <textarea
-        id="job"
-        rows="8"
-        cols="80"
-        placeholder="Paste job description here..."
-      ></textarea>
-    </div>
-
-    <br />
-
-    <button onclick="analyze()">Analyze</button>
-
-    <h3>Result</h3>
-    <pre id="result"></pre>
 
     <script src="/static/app.js"></script>
-  </body>
+</body>
 </html>
