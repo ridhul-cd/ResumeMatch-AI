@@ -9,9 +9,10 @@ router = APIRouter()
 def health_check() -> dict:
     return {"status": "ok"}
 
-@router.post('/resume_analyze',response_model=AnalyzeResponse)
-def analyze(request: AnalyzeRequest):
-    return analyze_resume(
+@router.post("/resume_analyze",response_model=AnalyzeResponse)
+async def analyze(request: AnalyzeRequest):
+    result = await analyze_resume(
         request.resume_text,
         request.job_description
     )
+    return result

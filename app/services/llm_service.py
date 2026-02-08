@@ -6,7 +6,7 @@ from app.schemas.analyze import AnalyzeResponse
 
 client = genai.Client(api_key=LLM_API_KEY)
 
-def analyze_resume(resume_text: str, job_description: str) -> AnalyzeResponse:
+async def analyze_resume(resume_text: str, job_description: str) -> AnalyzeResponse:
 
     prompt = f"""
 You are an AI assistant that compares a resume and a job description.
@@ -26,7 +26,7 @@ Resume:
 Job Description:
 {job_description}
 """
-    response = client.models.generate_content(
+    response = await client.models.generate_content(
         model=MODEL_NAME,
         contents=prompt,
         config=types.GenerateContentConfig(
