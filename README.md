@@ -67,7 +67,7 @@ Environment Configuration
 
 Create a file named .env in the project root directory and add:
 
-OPENAI_API_KEY=your_openai_api_key
+GEMINI_API_KEY,MODEL_NAME
 
 The application loads environment variables using python-dotenv.
 
@@ -91,8 +91,8 @@ pip install fastapi uvicorn openai pydantic python-dotenv
 
 4.  Start the application
 
-uvicorn main:app –reload
-
+ uvicorn app.main:app --reload
+ 
 5.  Access API documentation
 
 http://127.0.0.1:8000/docs

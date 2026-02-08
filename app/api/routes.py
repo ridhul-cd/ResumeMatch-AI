@@ -11,7 +11,7 @@ def health_check() -> dict:
 
 @router.post('/resume_analyze',response_model=AnalyzeResponse)
 def analyze(request: AnalyzeRequest):
-    analyze_resume(
+    return analyze_resume(
         request.resume_text,
         request.job_description
     )
